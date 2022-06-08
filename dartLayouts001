@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+void main() {
+runApp(const GFGapp());
+}
+
+class GFGapp extends StatelessWidget {
+const GFGapp({Key? key}) : super(key: key);
+
+@override
+Widget build(BuildContext context) {
+	return MaterialApp(
+	title: 'GeeksforGeeks',
+	theme: ThemeData(primarySwatch: Colors.pink),
+	darkTheme: ThemeData(primarySwatch: Colors.grey),
+	color: Colors.amberAccent,
+	supportedLocales: {const Locale('en', ' ')},
+	debugShowCheckedModeBanner: false,
+	home: const Scaffold(
+    body:Renglones(),
+	),
+	);
+}
+}
+
+class Renglones extends StatelessWidget {
+  const Renglones({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+ appBar: AppBar(title: const Text("Layouts")),
+ body: Container(
+ margin: const EdgeInsets.all(10.0),
+ alignment: Alignment.center,
+ decoration: const BoxDecoration(
+ color: Colors.amber,
+ boxShadow: [
+ BoxShadow(
+ color: Colors.purple, offset: Offset.zero, blurRadius: 5.0),
+ ],
+ gradient: LinearGradient(colors: [Colors.brown, Colors.amber])),
+ child: Row( children: <Widget>[
+ const Text("Hola!"),
+ const SizedBox(width: 20.0,),
+   Image.network("https://static.wikia.nocookie.net/lossimpson/images/6/65/Bart_Simpson.png/revision/latest/scale-to-width-down/350?cb=20100530014756&path-prefix=es", height: 300,width: 250),
+ ],),
+ ),
+ );
+ }
+}
